@@ -4,21 +4,21 @@
   <%# 管理者しか使えないようにしている %>
     <% if user_signed_in? && current_user.admin? %>
       <%= form_with model: @ror,url: statements_path, local: true do |f| %>
-        <%= f.text_field :gem_name %>
-        <%= f.text_area :about_gem %>
-        <%= f.text_area :syntax_name %>
-        <%= f.text_field :version %>
-        <%= f.text_area :how_to_use %>
+        <%= f.text_field :gem_name, placeholder: "gemファイル名" ,class:"text-height"%>
+        <%= f.text_area :about_gem, placeholder: "gemfile記載内容" ,class:"text-height" %>
+        <%= f.text_area :syntax_name, placeholder: "構文名" ,class:"text-height" %>
+        <%= f.text_field :version, placeholder: "バージョン" ,class:"text-height" %>
+        <%= f.text_area :how_to_use, placeholder: "使い方" ,class:"text-height" %>
         <%# description:使い方 %>
-        <%= f.text_field :description %>  
-        <%= f.text_field :reference_url %>
+        <%= f.text_field :description, placeholder: "記載場所" ,class:"text-height" %>  
+        <%= f.text_field :reference_url, placeholder: "参考URL" ,class:"text-height" %>
         <%= f.submit '送信' %>
       <% end %>
     <% end %>
 
     <%= form_with(url: search_rors_path, local: true, method: :get, class: "search-form") do |form| %>
       <%= form.text_field :keyword, placeholder: "検索", class: "search-input" %>
-      <%= form.submit "検索", class: "search-btn" %>
+      <%= form.submit "検索", class: "text-height" %>
     <% end %>
 
   </li>
@@ -29,7 +29,7 @@
       <%# DBのカラム名を表示 %>
       <tr>
         <% @columns.each do |column| %>
-          <th><%= column %></th>
+          <th><B><%= column %></B></th>
         <% end %>
       
       <% @rors.each do |ror| %>

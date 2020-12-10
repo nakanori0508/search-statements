@@ -1,24 +1,37 @@
-# README
+・アプリケーション名
+search-statements
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+・アプリケーション概要
+DBに保存したデータを保存できる
 
-Things you may want to cover:
+・URL
 
-* Ruby version
+・テスト用アカウント
 
-* System dependencies
 
-* Configuration
+・利用方法
+各言語のページ毎に言語で使われる記述が表示される。
+検索機能もつけている
 
-* Database creation
+・目指した課題解決
+このページで扱っている言語を勉強している初心者〜中級者向けのユーザーに、その言語の使い方を共有するため。
+自分自身が忘れやすいのと、客先常駐の仕事の時でも見れるようにするため。
+ノートだと記述や検索に時間がかかる上に紛失しやすいデメリットがあるから。
 
-* Database initialization
+・洗い出した要件
+複雑な画面遷移はしないこと
+登録したデータは全てのユーザーに見れること
+登録したデータは言語毎に表示できること
+データの登録は管理者ユーザーのみ実行できること
+全ての言語のデータにはバージョンの表記をすること
 
-* How to run the test suite
+・実装した機能についてのGIFと説明
 
-* Services (job queues, cache servers, search engines, etc.)
+・実装予定の機能
+Ruby on Railsのデータ登録と表示、検索機能の実装
+UiPathのデータ登録と表示、検索機能の実装
+VBAのデータ登録と表示、検索機能の実装
 
-* Deployment instructions
+・データベース設計
 
-* ...
+・ローカルでの動作方法
