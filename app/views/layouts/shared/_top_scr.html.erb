@@ -1,0 +1,9 @@
+<ul>
+  <% if user_signed_in? %>
+    <%= current_user.name %>
+    <% if current_user.admin? %>
+      <%= "管理者" %>
+     <% end %>
+     <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"header-text" %>
+  <% end %>
+</ul>

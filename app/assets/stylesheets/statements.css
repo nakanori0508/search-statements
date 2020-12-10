@@ -1,0 +1,40 @@
+.top-header{
+  background-color: blueviolet;
+  height:5vh;
+}
+
+.header-text{
+  text-align: right;
+}
+
+.wrapper{
+  display: flex;
+}
+.left-scr{
+  background-color: cornflowerblue;
+  width: 200px;
+  height: 100vh;
+}
+
+.right-top{
+  background-color: greenyellow;
+  height: 15vh;
+}
+.right-bottom{
+  background-color: aqua;
+  width: calc(100vw - 200px);
+  height: calc(100vh - 15vh);
+}
+table{
+  background-color: blanchedalmond;
+  width: 100%;
+}
+
+table tr{
+  border: solid 1px black;
+
+}
+
+td,th{
+  border: solid 1px;
+}

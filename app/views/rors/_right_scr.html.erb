@@ -1,0 +1,50 @@
+<ul>
+
+  <li class="right-top">
+  <%# 管理者しか使えないようにしている %>
+    <% if user_signed_in? && current_user.admin? %>
+      <%= form_with model: @ror,url: statements_path, local: true do |f| %>
+        <%= f.text_field :gem_name %>
+        <%= f.text_area :about_gem %>
+        <%= f.text_area :syntax_name %>
+        <%= f.text_field :version %>
+        <%= f.text_area :how_to_use %>
+        <%# description:使い方 %>
+        <%= f.text_field :description %>  
+        <%= f.text_field :reference_url %>
+        <%= f.submit '送信' %>
+      <% end %>
+    <% end %>
+
+    <%= form_with(url: search_rors_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "検索", class: "search-input" %>
+      <%= form.submit "検索", class: "search-btn" %>
+    <% end %>
+
+  </li>
+
+
+  <li class="right-bottom">
+    <table>
+      <%# DBのカラム名を表示 %>
+      <tr>
+        <% @columns.each do |column| %>
+          <th><%= column %></th>
+        <% end %>
+      
+      <% @rors.each do |ror| %>
+        <tr>
+          <th><%= ror.gem_name %></th>
+          <th><%= ror.about_gem %></th>
+          <th><%= ror.syntax_name %></th>
+          <th><%= ror.version %></th>
+          <th><%= ror.how_to_use %></th>
+          <th><%= ror.description %></th>
+          <th><%= ror.reference_url %></th>
+      </tr>
+      <% end %>
+      </tr>
+
+    </table>
+  </li>
+</ul>
