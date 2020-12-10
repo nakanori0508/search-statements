@@ -1,19 +1,24 @@
 .top-header{
-  background-color: lightsteelblue;
+  background-color: #e6e3e3;
+  /* background-image:linear-gradient(40deg, #e7faf0 0%, #effad7 50%); */
   /* border-bottom:1px solid black; */
-  height:13vh;
+  height:10vh;
 }
 
 .header-text{
   text-align: right;
+  text-decoration: none;
+  margin-right: 3vw;
+  
+
 }
 
 .wrapper{
   display: flex;
 }
 .left-scr{
-  background-color: lightsteelblue;
-  width: 200px;
+  background-color: #e6e3e3;
+  width: 130px;
   height: 100vh;
 }
 
@@ -21,6 +26,20 @@
   /* background-color: greenyellow; */
   height: 15vh;
 }
+
+.format{
+  
+  
+}
+.register{
+  flex-wrap:wrap;
+  
+}
+
+.search{
+
+}
+
 .right-bottom{
   /* background-color: aqua; */
   width: calc(100vw - 130px);
@@ -28,18 +47,20 @@
   overflow: scroll;
 }
 
-.text-height{
-  height:4vh
+.text-register{
+  height:4vh;
+  width:40vh;
+  
 }
 
 table{
-  background-color: blanchedalmond;
+  
   width: 100%;
 }
 
 table tr{
   border: solid 1px black;
-
+  background-image:linear-gradient(40deg, #e7faf0 0%, #effad7 90%);
 }
 
 td,th{

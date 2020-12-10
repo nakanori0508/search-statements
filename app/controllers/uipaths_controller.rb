@@ -1,25 +1,24 @@
-class RorsController < ApplicationController
+class UipathsController < ApplicationController
   before_action :find_id, only: [:index,:create]
   before_action :get_arrays, only: [:index,:search]
+
   def index
-    # @columnNames = Ror.column_names
-    # @columnNames = @columnNames - ["id","created_at","updated_at","language_id"]
-    @ror = Ror.new
+    @uipath = Uipath.new
   end
 
   def create
-    @ror = Ror.new(item_params)
-    if @ror.save
-      @ror = Ror.new
-      redirect_to rors_path
+    @uipath = Uipath.new(item_params)
+    if @uipath.save
+      redirect_to root_path
     else
       render :index
     end
   end
 
   def search
-    @rors = Ror.search(params[:keyword])
+    @uipaths = Uipath.search(params[:keyword])
   end
+
 
   private
   def item_params
