@@ -4,35 +4,36 @@
   <%# 管理者しか使えないようにしている %>
     <% if user_signed_in? && current_user.admin? %>
       <%= form_with model: @uipath,url: statements_path, local: true do |f| %>
-        <%= f.text_field :package_name, placeholder: "パッケージ名" ,class:"text-height"%>
-        <%= f.text_area :activity_name, placeholder: "アクティビティ名" ,class:"text-height" %>
-        <%= f.text_area :variable_type, placeholder: "使用変数の型" ,class:"text-height" %>
-        <%= f.text_field :version, placeholder: "バージョン" ,class:"text-height" %>
-        <%= f.text_area :how_to_use, placeholder: "使い方" ,class:"text-height" %>
+        <%= f.text_field :package_name, placeholder: "パッケージ名" ,class:"text-register"%>
+        <%= f.text_area :activity_name, placeholder: "アクティビティ名" ,class:"text-register" %>
+        <%= f.text_area :variable_type, placeholder: "使用変数の型" ,class:"text-register" %>
+        <%= f.text_field :version, placeholder: "バージョン" ,class:"text-register" %>
+        <%= f.text_area :how_to_use, placeholder: "使い方" ,class:"text-register" %>
         <%# description:使い方 %>
-        <%= f.text_field :description, placeholder: "記載場所" ,class:"text-height" %>  
-        <%= f.text_field :reference_url, placeholder: "参考URL" ,class:"text-height" %>
+        <%= f.text_field :description, placeholder: "記載場所" ,class:"text-register" %>  
+        <%= f.text_field :reference_url, placeholder: "参考URL" ,class:"text-register" %>
         <%= f.submit '送信' %>
       <% end %>
     <% end %>
 
-    <%#= form_with(url: search_rors_path, local: true, method: :get, class: "search-form") do |form| %>
-      <%#= form.text_field :keyword, placeholder: "検索", class: "search-input" %>
-      <%#= form.submit "検索", class: "text-height" %>
-    <%# end %>
+    <%= form_with(url: search_uipaths_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "検索", class: "search-input" %>
+      <%= form.submit "検索", class: "te" %>
+    <% end %>
 
   </li>
 
 
   <li class="right-bottom">
-    <table>
+ 
+    <table class="table table-striped table-hover bg-light" >
       <%# DBのカラム名を表示 %>
       <tr>
         <% @columns.each do |column| %>
           <th><B><%= column %></B></th>
         <% end %>
       
-      <% @uipaths.each do |ror| %>
+      <% @uipaths.each do |uipath| %>
         <tr>
           <th><%= uipath.package_name %></th>
           <th><%= uipath.activity_name %></th>
@@ -46,5 +47,6 @@
       </tr>
 
     </table>
+
   </li>
 </ul>
